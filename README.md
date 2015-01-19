@@ -1,2 +1,2 @@
-# payments-to-prisoners
-Payments to Prisoners public application
+# money-to-prisoners
+Money to Prisoners public application
