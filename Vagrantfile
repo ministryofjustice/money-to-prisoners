@@ -37,7 +37,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   if Vagrant.has_plugin?("vagrant-persistent-storage")
     config.persistent_storage.enabled = true
     config.persistent_storage.location = ".vagrant/docker_disk.vdi"
-    config.persistent_storage.size = 5000
+    config.persistent_storage.size = 20000
     config.persistent_storage.mountname = 'docker'
     config.persistent_storage.filesystem = 'ext4'
     config.persistent_storage.mountpoint = '/var/lib/docker'
