@@ -4,9 +4,9 @@ FROM ministryofjustice/ruby:2.1.5-webapp-onbuild
 RUN touch /etc/inittab
 
 # runit setup for the application
-RUN mkdir -p /etc/service/prison-visits
-COPY ./docker/runit/runit-service /etc/service/prison-visits/run
-RUN chmod +x /etc/service/prison-visits/run
+RUN mkdir -p /etc/service/money-to-prisoners
+COPY ./docker/runit/runit-service /etc/service/money-to-prisoners/run
+RUN chmod +x /etc/service/money-to-prisoners/run
 
 ENV UNICORN_PORT 3000
 
