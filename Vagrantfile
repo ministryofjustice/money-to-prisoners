@@ -44,7 +44,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   end
   # print out help
   config.vm.provision "shell", inline: <<-EOF
-    echo "---------------------------------------"
+    echo "#---------------------------------------"
+    echo "# Application should be available at:"
+    echo "#  http://localhost:#{UNICORN_PORT}"
+    echo "#---------------------------------------"
+    echo "# To use docker locally, set:"
     echo "export DOCKER_HOST=tcp://localhost:#{DOCKER_PORT}"
   EOF
 
