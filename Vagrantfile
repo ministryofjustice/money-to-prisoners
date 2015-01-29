@@ -2,8 +2,8 @@
 # vi: set ft=ruby :
 
 DOCKER_IMAGE_TAG='money-to-prisoners'
-DOCKER_PORT=2376
-UNICORN_PORT=3000
+DOCKER_PORT=2377
+UNICORN_PORT=3001
 VAGRANTFILE_API_VERSION = "2"
 
 DOCKER_ENABLED_BOX="puppetlabs/ubuntu-14.04-64-nocm"
@@ -33,11 +33,14 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.provision "shell", inline: $docker_setup
 
   # build image and start the application
+  #  rails 4.2.0 need explicit binding to 0.0.0.0 now
+  #  use /tmp/server.pid so that we don't prevent future runs from firing up.
   config.vm.provision "docker" do |d|
     d.build_image "/vagrant", args: "-t #{DOCKER_IMAGE_TAG}"
     d.run "#{DOCKER_IMAGE_TAG}",
-      args: "-v /vagrant:/usr/src/app -p #{UNICORN_PORT}:#{UNICORN_PORT}",
-      cmd: "bundle exec rails server"
+      image: "#{DOCKER_IMAGE_TAG}",
+      args: "-v /vagrant:/usr/src/app -p #{UNICORN_PORT}:3000",
+      cmd: "bundle exec rails server -P /tmp/server.pid --binding=0.0.0.0"
   end
   # print out help
   config.vm.provision "shell", inline: <<-EOF
