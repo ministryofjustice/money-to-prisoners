@@ -20,11 +20,6 @@ unless Vagrant.has_plugin?("vagrant-cachier")
   puts "         Install using 'vagrant plugin install vagrant-cachier'"
 end
 
-unless Vagrant.has_plugin?("vagrant-persistent-storage")
-  puts "WARNING: vagrant-persistent-storage not installed! It really speeds up docker image mgmt"
-  puts "         Install using 'vagrant plugin install vagrant-persistent-storage'"
-end
-
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box = DOCKER_ENABLED_BOX
   config.vm.hostname = "#{DOCKER_IMAGE_TAG}-dockerhost"
@@ -33,16 +28,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   # Set up SSH agent forwarding.
   config.ssh.forward_agent = true
-
-  if Vagrant.has_plugin?("vagrant-persistent-storage")
-    config.persistent_storage.enabled = true
-    config.persistent_storage.location = ".vagrant/docker_disk.vdi"
-    config.persistent_storage.size = 20000
-    config.persistent_storage.mountname = 'docker'
-    config.persistent_storage.filesystem = 'ext4'
-    config.persistent_storage.mountpoint = '/var/lib/docker'
-    config.persistent_storage.use_lvm = false
-  end
 
   config.vm.provision "docker"
   config.vm.provision "shell", inline: $docker_setup
