@@ -1,2 +1,6 @@
-# money-to-prisoners
-Money to Prisoners public application
+# Money to Prisoners public application
+
+## To run the application
+
+    vagrant up
+
