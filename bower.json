@@ -22,6 +22,6 @@
     "tests"
   ],
   "dependencies": {
-    "mojular": "ministryofjustice/mojular"
+    "mojular": "matharden/mojular#internal"
   }
 }
