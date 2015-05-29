@@ -1,5 +1,11 @@
+// Mojular template
 // Assets Pipeline prefix
 $assets-prefix: '/assets/';
-
 @import 'govuk';
 @import 'moj';
+
+// App colours
+@import 'colours';
+
+// App elements
+@import 'elements/subheader';
