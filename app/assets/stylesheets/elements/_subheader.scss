@@ -1,0 +1,25 @@
+.main-content {
+  padding-top: 0;
+}
+
+.global-subheader {
+  padding-top: $container-v-padding;
+  background: $grey-3-4;
+}
+
+.user-details {
+  text-align: right;
+
+  span {
+    padding: 0 .75em;
+    border-left: 2px solid $grey-1-2;
+
+    &:first-child {
+      border-left: none;
+      padding-left: 0;
+    }
+    &:last-child {
+      padding-right: 0;
+    }
+  }
+}
