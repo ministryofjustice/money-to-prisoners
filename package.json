@@ -1,0 +1,26 @@
+{
+  "name": "money-to-prisoners",
+  "version": "0.0.0",
+  "description": "Staff interface for viewing payments to prisoners",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "./nightwatch -c tests/nightwatch.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ministryofjustice/money-to-prisoners.git"
+  },
+  "author": "Mat Harden <matharden@gmail.com>",
+  "license": "OGL",
+  "bugs": {
+    "url": "https://github.com/ministryofjustice/money-to-prisoners/issues"
+  },
+  "homepage": "https://github.com/ministryofjustice/money-to-prisoners",
+  "devDependencies": {
+    "nightwatch": "^0.6.13",
+    "phantomjs": "^1.9.17",
+    "selenium-standalone": "^4.4.2"
+  }
+}
