@@ -19,3 +19,6 @@
 .vagrant
 
 /vendor/bower_components
+node_modules
+selenium-debug.log
+tests_output
