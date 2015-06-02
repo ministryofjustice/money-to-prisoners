@@ -17,3 +17,17 @@ Money to Prisoners public application
    [Docker](https://www.docker.com/) installed)
 2. Work normally, editing files from the host machine; Rails in the VM
    will pick up changes as you make them.
+
+## Running tests
+
+### Browser tests
+
+Browser tests run via Nightwatch JS which requires [NodeJS](https://nodejs.org).
+
+Before running the tests, install the NodeJS dependancies using `npm install`.
+
+#### Run the tests
+
+```bash
+make test
+```
