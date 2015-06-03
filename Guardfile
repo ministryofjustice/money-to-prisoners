@@ -1,7 +1,16 @@
-require "guard/rspec/dsl"
-clearing :on
+guard :bundler do
+  require 'guard/bundler'
+  require 'guard/bundler/verify'
+  helper = Guard::Bundler::Verify.new
 
-def watch_cucumber
+  files = ['Gemfile']
+  files += Dir['*.gemspec'] if files.any? { |f| helper.uses_gemspec?(f) }
+
+  # Assume files are symlinked from somewhere
+  files.each { |file| watch(helper.real_path(file)) }
+end
+
+guard "cucumber" do
   watch(%r{^features/.+\.feature$})
   watch(%r{^features/support/.+$})          { "features" }
 
@@ -10,8 +19,16 @@ def watch_cucumber
   end
 end
 
-def watch_rspec
+guard 'rails' do
+  watch('Gemfile.lock')
+  watch(%r{^(config|lib)/.*})
+end
+
+guard :rspec, cmd: "bundle exec rspec" do
+  require "guard/rspec/dsl"
   dsl = Guard::RSpec::Dsl.new(self)
+
+  # Feel free to open issues for suggestions and improvements
 
   # RSpec files
   rspec = dsl.rspec
@@ -40,56 +57,4 @@ def watch_rspec
   watch(rails.spec_helper)     { rspec.spec_dir }
   watch(rails.routes)          { "#{rspec.spec_dir}/routing" }
   watch(rails.app_controller)  { "#{rspec.spec_dir}/controllers" }
-
-  # Capybara features specs
-  watch(rails.view_dirs)     { |m| rspec.spec.("features/#{m[1]}") }
-end
-
-guard :bundler do
-  require 'guard/bundler'
-  require 'guard/bundler/verify'
-  helper = Guard::Bundler::Verify.new
-
-  files = ['Gemfile']
-  files += Dir['*.gemspec'] if files.any? { |f| helper.uses_gemspec?(f) }
-
-  # Assume files are symlinked from somewhere
-  files.each { |file| watch(helper.real_path(file)) }
-end
-
-group :features do
-  guard 'cucumber',
-    cli: '--profile default',
-    all_on_start: true,
-    binstubs: true do
-    watch_cucumber
-  end
-end
-
-guard 'rails' do
-  watch('Gemfile.lock')
-  watch(%r{^(config|lib)/.*})
-end
-
-group :spec do
-  guard :rspec,
-    cmd: "bin/rspec",
-    all_on_start: true,
-    all_after_pass: true  do
-    watch_rspec
-  end
-end
-
-group :focus do
-
-    guard 'cucumber',
-      cli: '--profile focus',
-      binstubs: true do
-        watch_cucumber
-      end
-
-    guard :rspec,
-      cmd: "bin/rspec --tag focus" do
-        watch_rspec
-      end
 end

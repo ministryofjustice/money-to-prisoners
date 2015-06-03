@@ -1,0 +1,25 @@
+%h1 Listing prisoners
+
+%table
+  %thead
+    %tr
+      %th Prisoner name
+      %th Prisoner number
+      %th Prisoner dob
+      %th
+      %th
+      %th
+
+  %tbody
+    - @prisoners.each do |prisoner|
+      %tr
+        %td= prisoner.prisoner_name
+        %td= prisoner.prisoner_number
+        %td= prisoner.prisoner_dob
+        %td= link_to 'Show', prisoner
+        %td= link_to 'Edit', edit_prisoner_path(prisoner)
+        %td= link_to 'Destroy', prisoner, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Prisoner', new_prisoner_path

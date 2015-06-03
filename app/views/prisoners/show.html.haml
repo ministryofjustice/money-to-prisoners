@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Prisoner name:
+  = @prisoner.prisoner_name
+%p
+  %b Prisoner number:
+  = @prisoner.prisoner_number
+%p
+  %b Prisoner dob:
+  = @prisoner.prisoner_dob
+
+= link_to 'Edit', edit_prisoner_path(@prisoner)
+\|
+= link_to 'Back', prisoners_path

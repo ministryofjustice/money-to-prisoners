@@ -11,9 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20150603121349) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "prisoners", force: :cascade do |t|
+    t.string   "prisoner_name"
+    t.string   "prisoner_number"
+    t.date     "prisoner_dob"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  add_index "prisoners", ["prisoner_dob"], name: "index_prisoners_on_prisoner_dob", using: :btree
+  add_index "prisoners", ["prisoner_name"], name: "index_prisoners_on_prisoner_name", using: :btree
+  add_index "prisoners", ["prisoner_number"], name: "index_prisoners_on_prisoner_number", using: :btree
 
 end

@@ -1,0 +1,19 @@
+= form_for @prisoner do |f|
+  - if @prisoner.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@prisoner.errors.count, "error")} prohibited this prisoner from being saved:"
+      %ul
+        - @prisoner.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :prisoner_name
+    = f.text_field :prisoner_name
+  .field
+    = f.label :prisoner_number
+    = f.text_field :prisoner_number
+  .field
+    = f.label :prisoner_dob
+    = f.date_select :prisoner_dob
+  .actions
+    = f.submit 'Save'
