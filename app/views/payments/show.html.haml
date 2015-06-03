@@ -1,0 +1,21 @@
+%p#notice= notice
+
+%p
+  %b Sender:
+  = @payment.sender_id
+%p
+  %b Amount in pence:
+  = @payment.amount_in_pence
+%p
+  %b Source:
+  = @payment.source
+%p
+  %b Received at:
+  = @payment.received_at
+%p
+  %b Reference:
+  = @payment.reference
+
+= link_to 'Edit', edit_payment_path(@payment)
+\|
+= link_to 'Back', payments_path

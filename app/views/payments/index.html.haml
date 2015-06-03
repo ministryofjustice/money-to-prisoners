@@ -1,0 +1,29 @@
+%h1 Listing payments
+
+%table
+  %thead
+    %tr
+      %th Sender
+      %th Amount in pence
+      %th Source
+      %th Received at
+      %th Reference
+      %th
+      %th
+      %th
+
+  %tbody
+    - @payments.each do |payment|
+      %tr
+        %td= payment.sender_id
+        %td= payment.amount_in_pence
+        %td= payment.source
+        %td= payment.received_at
+        %td= payment.reference
+        %td= link_to 'Show', payment
+        %td= link_to 'Edit', edit_payment_path(payment)
+        %td= link_to 'Destroy', payment, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Payment', new_payment_path
