@@ -9,4 +9,7 @@ Coverage](https://codeclimate.com/github/ministryofjustice/money-to-prisoners/ba
 
 ## Getting Started
 
-
+```bash
+rake db:create db:migrate # provision database (first time only)
+rails server # run the app
+```
