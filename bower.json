@@ -12,7 +12,7 @@
   "keywords": [
     "moj"
   ],
-  "license": "MIT",
+  "license": "OGL",
   "private": true,
   "ignore": [
     "**/.*",
