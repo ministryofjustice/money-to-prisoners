@@ -6,3 +6,9 @@ Feature: manage payments
     Given 3 payments exist
     When I visit "payments"
     Then I see 3 payments
+
+  Scenario: View a payment
+    Given 1 payment exist
+    When I view that payment
+    Then I see the payment details
+
