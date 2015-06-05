@@ -14,7 +14,7 @@
 
   %tbody
     - @payments.each do |payment|
-      %tr
+      %tr.payment
         %td= payment.sender_id
         %td= payment.amount_in_pence
         %td= payment.source
