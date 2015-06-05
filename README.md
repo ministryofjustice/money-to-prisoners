@@ -9,6 +9,14 @@ Coverage](https://codeclimate.com/github/ministryofjustice/money-to-prisoners/ba
 
 ## Getting Started
 
+Install the front-end resources using [Bower](http://bower.io/):
+
+```bash
+bower install
+```
+
+Run the Ruby on Rails server:
+
 ```bash
 rake db:create db:migrate # provision database (first time only)
 rails server # run the app

@@ -1,0 +1,24 @@
+.main-content {
+  padding-top: 0;
+}
+
+.global-subheader {
+  padding-top: $container-v-padding;
+  background: $grey-3-4;
+}
+
+.app-title {
+  font-size: em(24);
+  font-weight: bold;
+  text-align: center;
+}
+
+.user-details {
+  text-align: right;
+
+  span {
+    margin-left: .75em;
+    padding-left: .75em;
+    border-left: 2px solid $grey-1-2;
+  }
+}
