@@ -1,10 +1,9 @@
 FactoryGirl.define do
   factory :payment do
-    sender_id 1
-amount_in_pence 1
-source "MyString"
-received_at "2015-06-03 14:58:51"
-reference "MyString"
+    sequence(:sender_id) { |n| n }
+    amount_in_pence 1000
+    sequence(:source) { |n| "Source #{n}" }
+    received_at { Time.now }
+    sequence(:reference) { |n| "Reference #{n}" }
   end
-
 end
