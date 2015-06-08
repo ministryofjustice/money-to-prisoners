@@ -7,5 +7,6 @@ $assets-prefix: '/assets/';
 // App colours
 @import 'colours';
 
-// App elements
-@import 'elements/subheader';
+// App components
+@import 'components/subheader';
+@import 'components/summary_boxes';
