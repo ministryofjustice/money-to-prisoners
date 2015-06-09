@@ -9,10 +9,10 @@ Coverage](https://codeclimate.com/github/ministryofjustice/money-to-prisoners/ba
 
 ## Getting Started
 
-Install the front-end resources using [Bower](http://bower.io/):
+Install the front-end resources using [NPM](https://www.npmjs.com/):
 
 ```bash
-bower install
+npm install
 ```
 
 Run the Ruby on Rails server:
@@ -20,4 +20,14 @@ Run the Ruby on Rails server:
 ```bash
 rake db:create db:migrate # provision database (first time only)
 rails server # run the app
+```
+
+## Running tests
+
+### Browser tests
+
+Browser tests run in [Nightwatch.js](http://nightwatchjs.org/) via [NodeJS](https://nodejs.org).
+
+```bash
+npm test # runs all tests
 ```
