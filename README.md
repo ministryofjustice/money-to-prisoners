@@ -1,3 +1,8 @@
+# Deprecated
+
+Replaced by money-to-prisoners-api, money-to-prisoners-cashbook, money-to-prisoners-bank-admin and money-to-prisoners-prisoner-location-admin.
+
+
 # Money To Prisoners
 
 [![Build
