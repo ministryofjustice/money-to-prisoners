@@ -9,7 +9,7 @@ This repository has been deprecated. The project is now comprised of these app r
 - [Prisoner Money Intelligence for security staff](https://github.com/ministryofjustice/money-to-prisoners-noms-ops)
 - [Public site for sending money](https://github.com/ministryofjustice/money-to-prisoners-send-money)
 - [Bank statement processing script](https://github.com/ministryofjustice/money-to-prisoners-transaction-uploader)
-- [Start page for testing](https://github.com/ministryofjustice/money-to-prisoners-instructions)
+- [GOV.UK start page for testing purposes](https://github.com/ministryofjustice/money-to-prisoners-start-page)
 
 Shared utility repositories:
 
