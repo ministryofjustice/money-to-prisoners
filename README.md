@@ -1,22 +1,26 @@
-Money to Prisoners
-==================
-
-This repository has been deprecated. The project is now comprised of these app repositories:
+Prisoner money applications
+===========================
 
 - [API and dashboard](https://github.com/ministryofjustice/money-to-prisoners-api)
-- [Digital Cashbook for prison business hub staff](https://github.com/ministryofjustice/money-to-prisoners-cashbook)
-- [Bank Admin for SSCL staff](https://github.com/ministryofjustice/money-to-prisoners-bank-admin)
-- [Prisoner Money Intelligence for security staff](https://github.com/ministryofjustice/money-to-prisoners-noms-ops)
-- [Public site for sending money](https://github.com/ministryofjustice/money-to-prisoners-send-money)
-- [Bank statement processing script](https://github.com/ministryofjustice/money-to-prisoners-transaction-uploader)
-- [GOV.UK start page for testing purposes](https://github.com/ministryofjustice/money-to-prisoners-start-page)
+    – holds data and business logic for all apps
+- [Send money to someone in prison](https://github.com/ministryofjustice/money-to-prisoners-send-money)
+    – public site for sending money to prisoners
+- [Digital cashbook](https://github.com/ministryofjustice/money-to-prisoners-cashbook)
+    – used by prison business hub staff for processing money
+- [Bank admin](https://github.com/ministryofjustice/money-to-prisoners-bank-admin)
+    – used by SSCL staff for reconciliation
+- [Prisoner money intelligence](https://github.com/ministryofjustice/money-to-prisoners-noms-ops)
+    – used by security staff
+- [Bank statement processor](https://github.com/ministryofjustice/money-to-prisoners-transaction-uploader)
 
-Shared utility repositories:
+Utility repositories:
 
 - [Components shared by multiple apps](https://github.com/ministryofjustice/money-to-prisoners-common)
 - [Deployment pipeline](https://github.com/ministryofjustice/money-to-prisoners-deploy)
+- [GOV.UK start page](https://github.com/ministryofjustice/money-to-prisoners-start-page)
+    –  for testing purposes
 
 Prototypes:
 
-- [Prisoner Money Intelligence prototype](https://github.com/ministryofjustice/hmpps-monitor-prisoner-money-prototype)
-- [Public site prototype](https://github.com/ministryofjustice/hmpps-send-money-to-a-prisoner-prototype)
+- [Prisoner money intelligence](https://github.com/ministryofjustice/hmpps-monitor-prisoner-money-prototype)
+- [Send money to someone in prison](https://github.com/ministryofjustice/hmpps-send-money-to-a-prisoner-prototype)
