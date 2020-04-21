@@ -18,7 +18,7 @@ Utility repositories:
 - [Components shared by multiple apps](https://github.com/ministryofjustice/money-to-prisoners-common)
 - [Deployment pipeline](https://github.com/ministryofjustice/money-to-prisoners-deploy)
 - [GOV.UK start page](https://github.com/ministryofjustice/money-to-prisoners-start-page)
-    –  for testing purposes
+    –  for testing purposes and redirection of old domains
 
 Prototypes:
 
