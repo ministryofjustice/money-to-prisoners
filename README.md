@@ -12,6 +12,9 @@ Prisoner money applications
 - [Prisoner money intelligence](https://github.com/ministryofjustice/money-to-prisoners-noms-ops)
     – used by security staff
 - [Bank statement processor](https://github.com/ministryofjustice/money-to-prisoners-transaction-uploader)
+    – used to read bank account statement
+- [Email gateway](https://github.com/ministryofjustice/money-to-prisoners-emails)
+    – used to host email attachments and GOV.UK Notify callbacks
 
 Utility repositories:
 
