@@ -25,8 +25,8 @@ Each repository defines [.editorconfig](http://editorconfig.org) settings.
 Commits
 -------
 
-Keep the commit tree tidy – squash fixups, rebase branches onto master to have few branches in parallel and do not
-merge master into a feature branch.
+Keep the commit tree tidy – squash fixups, rebase branches onto ``main`` to have few branches in parallel and do not
+merge ``main`` back into a feature branch.
 
 Use the imperative mood for a short first line of the message. For example,
 “*Add* more filtering options to credit api” or “*Fix* time zone bug in digital take-up calculation”.
